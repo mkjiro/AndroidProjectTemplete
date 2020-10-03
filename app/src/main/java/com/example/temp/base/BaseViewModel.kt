@@ -5,7 +5,7 @@ import com.example.temp.ui.livedata.EventLiveData
 import com.example.temp.ui.livedata.LifecycleDisposable
 import com.example.temp.ui.livedata.WithLifecycleDisposing
 import com.example.temp.ui.livedata.lifecycleDisposable
-import io.reactivex.Completable
+import io.reactivex.rxjava3.core.Completable
 import timber.log.Timber
 
 abstract class BaseViewModel<Nav : BaseEvents>() :
