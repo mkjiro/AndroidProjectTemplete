@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import com.example.temp.App
 import com.example.temp.BuildConfig
+import com.example.temp.data.DataModule
 import com.example.temp.domain.DomainModule
 import dagger.Binds
 import dagger.Module
@@ -17,6 +18,7 @@ import dagger.android.AndroidInjectionModule
         AndroidInjectionModule::class,
         ViewModelModule::class,
         DomainModule::class,
+        DataModule::class,
         ActivityModule::class
     ]
 )
