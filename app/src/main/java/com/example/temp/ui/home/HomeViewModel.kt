@@ -9,6 +9,7 @@ import com.example.temp.ui.livedata.EventLiveData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import retrofit2.HttpException
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -25,18 +26,22 @@ class HomeViewModel @Inject constructor(
         val path = BuildConfig.GOOGLE_PATH
         Timber.d("%s",path)
         val response = sampleAPIService
-            .getSpreadSheet(path)
+            .getSpreadSheet(path + "aa")
 
         response
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.newThread())
             .subscribe({
+                Timber.d("HttpStatus : %s",it.code())
                 val jsonData = it.body()
                 jsonData?.forEach {
                     Timber.d("%s", it.toString())
                 }
             },{
-                Timber.d(it.message)
+                if(it is HttpException){
+                    Timber.d("HttpStatus : %s",it.code())
+                    Timber.d("Error Message : %s", it.message())
+                }
                 Timber.e(it)
             }).let(disposables::add)
     }
