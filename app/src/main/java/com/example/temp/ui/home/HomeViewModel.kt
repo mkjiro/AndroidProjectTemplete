@@ -26,7 +26,7 @@ class HomeViewModel @Inject constructor(
         val path = BuildConfig.GOOGLE_PATH
         Timber.d("%s",path)
         val response = sampleAPIService
-            .getSpreadSheet(path + "aa")
+            .getSpreadSheet(path)
 
         response
             .observeOn(AndroidSchedulers.mainThread())
