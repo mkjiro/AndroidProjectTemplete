@@ -18,7 +18,6 @@ abstract class NextModule {
     @ViewModelKey(NextViewModel::class)
     abstract fun bindsNextViewModel(viewModel: NextViewModel): ViewModel
 
-
     @Module
     companion object {
 

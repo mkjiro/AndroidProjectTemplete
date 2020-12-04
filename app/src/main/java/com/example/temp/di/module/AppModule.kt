@@ -41,5 +41,3 @@ abstract class AppModule {
         )
     }
 }
-
-

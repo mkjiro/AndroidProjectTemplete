@@ -3,7 +3,7 @@ package com.example.temp.ui.livedata
 import androidx.lifecycle.Observer
 
 class EventLiveDataObserver<T : Any>(
-        private val onEventUnhandledContent: (T) -> Unit
+    private val onEventUnhandledContent: (T) -> Unit
 ) : Observer<Event<T>> {
 
     override fun onChanged(event: Event<T>?) {
