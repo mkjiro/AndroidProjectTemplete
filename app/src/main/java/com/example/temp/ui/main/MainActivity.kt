@@ -56,11 +56,15 @@ class MainActivity : BaseActivity() {
     }
 
     private fun onMainNavigationEventReceive(event: MainEvents) {
+        when(event){
+            MainEvents.Success -> {}
+            else -> {}
+        }
     }
 
     private fun configureNavController() {
         navController = findNavController(R.id.nav_controller)
-        navController.addOnDestinationChangedListener { _, destination, _ ->
+        navController.addOnDestinationChangedListener { _, _, _ ->
 
         }
     }

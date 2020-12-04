@@ -10,6 +10,6 @@ class SetLocale(private val activity: Activity) {
         val configuration = Configuration().apply {
             setLocale(local)
         }
-        activity.resources.updateConfiguration(configuration, null)
+        activity.createConfigurationContext(configuration)
     }
 }
