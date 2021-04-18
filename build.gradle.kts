@@ -10,6 +10,7 @@ buildscript {
         classpath(deps.Libs.GradlePlugin.kotlin)
         classpath(deps.Libs.GradlePlugin.safeArgs)
         classpath(deps.Libs.GradlePlugin.ktlint)
+        classpath(deps.Libs.GradlePlugin.dagger)
     }
 }
 

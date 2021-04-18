@@ -6,6 +6,7 @@ object Libs{
         const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
         const val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.1"
         const val ktlint = "org.jlleitschuh.gradle:ktlint-gradle:9.4.1"
+        const val dagger = "com.google.dagger:hilt-android-gradle-plugin:2.34.1-beta"
     }
 
     object Test {
@@ -48,6 +49,13 @@ object Libs{
         const val android = "com.google.dagger:dagger-android:2.23.1"
         const val support = "com.google.dagger:dagger-android-support:2.23.1"
         const val processor = "com.google.dagger:dagger-android-processor:2.23.1"
+
+    }
+
+    object DaggerHilt {
+        const val client = "com.google.dagger:hilt-android:2.34.1-beta"
+        const val compiler = "com.google.dagger:hilt-compiler:2.34.1-beta"
+
     }
 
     object OkHttp{

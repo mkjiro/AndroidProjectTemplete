@@ -4,11 +4,12 @@ plugins {
     id("com.android.application")
 //    kotlin("jvm")
     kotlin("android")
-    kotlin("android.extensions")
+//    kotlin("android.extensions")
     kotlin("kapt")
 //    id("androidx.navigation.safeargs.kotlin")
     id("org.jlleitschuh.gradle.ktlint")
     id("jacoco")
+    id("dagger.hilt.android.plugin")
 }
 
 jacoco {
@@ -56,6 +57,12 @@ android {
 
 //        val localProperty = property()
 //        localProperty.load(project.rootProject.file("local.properties"))
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += "dagger.hilt.disableModulesHaveInstallInCheck" to "true"
+            }
+        }
     }
 
     signingConfigs {
@@ -192,6 +199,9 @@ dependencies {
     implementation(Libs.Dagger.support)
     kapt(Libs.Dagger.processor)
 
+    implementation(Libs.DaggerHilt.client)
+    kapt(Libs.DaggerHilt.compiler)
+
     //lifecycle
     implementation(Libs.AndroidX.lifecycleExtensions)
     kapt(Libs.AndroidX.lifecycleCompiler)
@@ -213,4 +223,8 @@ dependencies {
 
     //recyclerView
     implementation(Libs.AndroidX.recyclerView)
+}
+
+kapt {
+    correctErrorTypes = true
 }
